@@ -10,3 +10,9 @@
 2.times do |i|
   User.create(email: "user#{i+1}@email.com", password: "password", password_confirmation: "password")
 end
+
+User.all.each do |u|
+  5.times do |i|
+    u.logtime_items.create(date: i.days.ago, clockIn: "9:37", clockOut: "15:13")
+  end
+end
