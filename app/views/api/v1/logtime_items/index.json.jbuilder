@@ -1,0 +1,1 @@
+json.array! @logtime_items, partial: "api/v1/logtime_items/logtime_item", as: :logtime_item

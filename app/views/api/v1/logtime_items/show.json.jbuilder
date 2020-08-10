@@ -1,0 +1,1 @@
+json.partial! "api/v1/logtime_items/logtime_item", logtime_item: @logtime_item
