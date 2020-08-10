@@ -2,16 +2,12 @@
 
 This is a repository of an employee time tracker application using Ruby on Rails and ReactJS.
 
----
-
 ## Table of Contents
 
 - [Description](#description)
 - [Approach](#approach)
 - [Installation](#installation)
 - [Other Available Scripts](#other-available-scripts)
-
----
 
 ## Description
 
@@ -28,8 +24,6 @@ Additional considerations:
 - A clock event may need to be edited or deleted
 - Are there any validations or UI constraints.
 
----
-
 ## Approach
 
 <TODO>
@@ -37,8 +31,6 @@ Additional considerations:
 How did you approach this challenge?
 What schema design did you choose and why?
 If you were given another day to work on this, how would you spend it? What if you were given a month?
-
----
 
 ## Installation
 
@@ -63,13 +55,9 @@ rails s
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
----
-
 ## Projects
 
 All project stylings we use Semantic-UI.
-
----
 
 <TODO>
 
