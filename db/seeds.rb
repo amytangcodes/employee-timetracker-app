@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-3.times do |i|
-  User.create(name: "User-#{i+1}", email: "user-#{i+1}@example.com", password: "1234", password_conformation: "1234")
+2.times do |i|
+  User.create(email: "user#{i+1}@email.com", password: "password", password_confirmation: "password")
 end
