@@ -21,7 +21,7 @@ class Api::V1::LogtimeItemsController < ApplicationController
     if authorized?
       respond_to do |format|
         if @logtime_item.save
-          format.json { render :show, status: :created, location: api_v1_logtime_item_path(@logtime_item)}
+          format.json { render :show, status: :created, location: api_v1_logtime_item_path(@logtime_item) }
         else
           format.json { render json: @logtime_item.errors, status: :unprocessable_entity }
         end
@@ -32,9 +32,28 @@ class Api::V1::LogtimeItemsController < ApplicationController
   end
 
   def update
+    if authorized?
+      respond_to do |format|
+        if @logtime_item.update(logtime_item_params)
+          format.json { render :show, status: :ok, location: api_v1_logtime_item_path(@logtime_item) }
+        else
+          format.json { render json: @logtime_item.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      handle_unauthorized
+    end
   end
 
   def destroy
+    if authorized?
+      @logtime_item.destroy
+      respond_to do |format|
+        format.json { head :no_content }
+      end
+    else
+      handle_unauthorized
+    end
   end
 
   private
