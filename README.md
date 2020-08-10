@@ -1,24 +1,76 @@
-# README
+# Introduction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a repository of an employee time tracker application using Ruby on Rails and ReactJS.
 
-Things you may want to cover:
+---
 
-- Ruby version
+## Table of Contents
 
-- System dependencies
+- [Description](#description)
+- [Approach](#approach)
+- [Installation](#installation)
+- [Other Available Scripts](#other-available-scripts)
 
-- Configuration
+---
 
-- Database creation
+## Description
 
-- Database initialization
+The app should be a clock-in/out screen that will:
 
-- How to run the test suite
+- Allow a user to enter their name or log in
+- Allow the user to clock either in or out
+- Upon clock event, store this information
+- Provide a list of all clock events with logged information
 
-- Services (job queues, cache servers, search engines, etc.)
+Additional considerations:
 
-- Deployment instructions
+- A teacher may need to clock in/out multiple times a day (e.g., for lunch)
+- A clock event may need to be edited or deleted
+- Are there any validations or UI constraints.
 
-- ...
+---
+
+## Approach
+
+<TODO>
+
+How did you approach this challenge?
+What schema design did you choose and why?
+If you were given another day to work on this, how would you spend it? What if you were given a month?
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone git@github.com:amytangcodes/employee-timetracker-app.git
+```
+
+Install Dependencies
+
+```bash
+<TODO>
+```
+
+In the console, you can run:
+
+```bash
+rails s
+```
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+---
+
+## Projects
+
+All project stylings we use Semantic-UI.
+
+---
+
+<TODO>
+
+## Other Available Scripts
