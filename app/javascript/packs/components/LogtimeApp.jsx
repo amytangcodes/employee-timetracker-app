@@ -1,18 +1,41 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+
+import axios from "axios";
+
 import LogtimeItems from "./LogtimeItems";
+import UserProfile from "./UserProfile";
 
 class LogtimeApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logtimeItems: [],
+    };
+    this.getLogtimeItems = this.getLogtimeItems.bind(this);
+  }
+
+  componentDidMount() {
+    this.getLogtimeItems();
+  }
+
+  getLogtimeItems() {
+    axios
+      .get("/api/v1/logtime_items")
+      .then((res) => {
+        const logtimeItems = res.data;
+        this.setState({ logtimeItems });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   render() {
+    const { logtimeItems } = this.state;
     return (
       <div>
-        <div className="jumbotron">
-          <h1 className="display-4">Good day, NAME!</h1>
-          <p className="lead">Your next shift:</p>
-          <hr />
-        </div>
-
-        <LogtimeItems />
+        <UserProfile />
+        <LogtimeItems logtimeItems={logtimeItems} />
       </div>
     );
   }

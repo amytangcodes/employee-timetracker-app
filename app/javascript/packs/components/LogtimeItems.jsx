@@ -1,7 +1,7 @@
 import React from "react";
 import LogtimeItem from "./LogtimeItem";
 
-const LogtimeItems = () => {
+const LogtimeItems = ({ logtimeItems }) => {
   return (
     <>
       <div className="table-responsive">
@@ -17,7 +17,7 @@ const LogtimeItems = () => {
             </tr>
           </thead>
           <tbody>
-            <LogtimeItem />
+            <LogtimeItem logtimeItems={logtimeItems} />
           </tbody>
         </table>
       </div>
