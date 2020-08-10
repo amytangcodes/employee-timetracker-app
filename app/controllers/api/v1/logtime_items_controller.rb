@@ -77,5 +77,4 @@ class Api::V1::LogtimeItemsController < ApplicationController
   def logtime_item_params
     params.require(:logtime_item).permit(:date, :clockIn, :clockOut, :totalBreakDuration)
   end
-
 end
