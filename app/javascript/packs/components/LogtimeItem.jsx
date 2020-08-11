@@ -5,7 +5,6 @@ const LogtimeItem = ({ logtimeItems }) => {
     <>
       {logtimeItems &&
         logtimeItems.map((logtimeItem) => {
-          console.log({ logtimeItem });
           return (
             <tr className="table-light" key={logtimeItem.id}>
               <td>{logtimeItem.date}</td>

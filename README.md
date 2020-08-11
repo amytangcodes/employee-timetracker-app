@@ -30,7 +30,15 @@ Additional considerations:
 
 How did you approach this challenge?
 What schema design did you choose and why?
+
+## Backlog
+
 If you were given another day to work on this, how would you spend it? What if you were given a month?
+
+- User profile section - User profile controller
+- Define user page permissions - different access between Admin, teacher, parents
+- Write tests
+- React refactor code (hooks)
 
 ## Installation
 
