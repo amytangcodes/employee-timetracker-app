@@ -5,6 +5,7 @@ import axios from "axios";
 
 import UserProfile from "./UserProfile";
 import LogtimeItems from "./LogtimeItems";
+import LogtimeModal from "./LogtimeModal";
 
 const LogtimeApp = () => {
   useEffect(() => {
@@ -19,8 +20,16 @@ const LogtimeApp = () => {
   return (
     <div>
       <UserProfile />
-
       <LogtimeItems logtimeItems={logtimeItems} />
+      <button
+        type="button"
+        className="btn btn-primary btn-block"
+        data-toggle="modal"
+        data-target="#formModal"
+      >
+        Log Your Hours
+      </button>
+      <LogtimeModal />
     </div>
   );
 };

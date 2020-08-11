@@ -1,12 +1,12 @@
 import React from "react";
+import { Segment } from "semantic-ui-react";
 
 const UserProfile = () => {
   return (
-    <div className="jumbotron">
-      <h1 className="display-4">Good day, NAME!</h1>
+    <Segment raised>
+      <h2 className="display-4">Good day!</h2>
       <p className="lead">Your next shift:</p>
-      <hr />
-    </div>
+    </Segment>
   );
 };
 

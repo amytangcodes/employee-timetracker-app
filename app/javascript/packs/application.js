@@ -17,3 +17,4 @@ require("channels");
 require("./components/LogtimeApp");
 require("bootstrap");
 import "bootstrap/dist/css/bootstrap";
+import "semantic-ui-css/semantic.min.css";
