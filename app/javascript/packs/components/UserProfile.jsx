@@ -1,6 +1,8 @@
 import React from "react";
 import { Segment, Image } from "semantic-ui-react";
 
+import ClockContainer from "./ClockContainer";
+
 const UserProfile = () => {
   return (
     <Segment raised>
@@ -11,7 +13,7 @@ const UserProfile = () => {
         circular
       />
       <h2 className="display-4">Good day, Patrick!</h2>
-      <p className="lead">Your next shift:</p>
+      <ClockContainer />
     </Segment>
   );
 };
