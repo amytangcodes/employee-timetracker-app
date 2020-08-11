@@ -21,14 +21,6 @@ const LogtimeApp = () => {
     <div>
       <UserProfile />
       <LogtimeItems logtimeItems={logtimeItems} />
-      <button
-        type="button"
-        className="btn btn-primary btn-block"
-        data-toggle="modal"
-        data-target="#formModal"
-      >
-        Log Your Hours
-      </button>
       <LogtimeModal />
     </div>
   );
