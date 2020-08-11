@@ -14,11 +14,12 @@ const LogtimeItem = ({ logtimeItems }) => {
               <Table.Cell>{logtimeItem.totalBreakDuration}</Table.Cell>
               <Table.Cell>{logtimeItem.totalLogDuration}</Table.Cell>
               <Table.Cell className="text-center">
-                <Icon name="edit" className="gutter" title="Edit" />
+                <Icon name="edit" className="gutter" title="Edit" link />
                 <Icon
                   name="trash alternate"
                   className="gutter"
                   title="Delete"
+                  link
                 />
               </Table.Cell>
             </Table.Row>
