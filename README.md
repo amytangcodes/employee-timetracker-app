@@ -40,7 +40,10 @@ Figured out what information I required to log each work schedule
 
 **If you were given another day to work on this, how would you spend it? What if you were given a month?**
 
-- User profile section - User profile controller
+- Continue working on creating new data, hook up edit log data, and delete log
+- Format clock and date
+- Add user profile section - User profile controller
+- Maybe go through [this](https://blog.heroku.com/a-rock-solid-modern-web-stack) to better understand deploying to heroku
 - Define user page permissions - different access between Admin, teacher, parents
 - Write tests
 
