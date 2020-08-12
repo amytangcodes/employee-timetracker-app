@@ -17,12 +17,35 @@ const inlineStyle = {
     bottom: "0",
   },
   icon: {
-    marginRight: "15px !important",
+    paddingRight: "25px",
   },
 };
 
 const LogtimeModal = () => {
   const [open, setOpen] = React.useState(false);
+
+  const initialFormState = {
+    date: "",
+    clockIn: "",
+    clockOut: "",
+    totalBreakDuration: "",
+  };
+
+  const addLog = (log) => {
+    axios
+      .post("/api/v1/logtime_items", {
+        logtime_item: {
+          date: job.date,
+          clockIn: job.clockIn,
+          clockOut: job.clockOut,
+          totalBreakDuration: job.totalBreakDuration,
+        },
+      })
+      .then((res) => createLogtimeItems(res.data))
+      .catch((err) => console.log(err));
+    e.target.reset();
+    setLogs([...Logs, log]);
+  };
 
   return (
     <Modal
@@ -31,8 +54,7 @@ const LogtimeModal = () => {
       open={open}
       trigger={
         <Button icon color="blue" fluid>
-          <Icon name="plus" style={inlineStyle.icon} />
-          Manually Log Your hours
+          <Icon name="plus" style={inlineStyle.icon} /> Manually Log Your hours
         </Button>
       }
       style={inlineStyle.modal}
@@ -40,7 +62,7 @@ const LogtimeModal = () => {
       <Modal.Header>Fill Out Your Log Details</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <LogtimeForm />
+          <LogtimeForm addLog={addLog} initialFormState={initialFormState} />
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions style={inlineStyle.actions}>

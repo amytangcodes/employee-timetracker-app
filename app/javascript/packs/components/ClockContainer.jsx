@@ -55,26 +55,28 @@ class ClockContainer extends Component {
 
     return (
       <div style={inlineStyle.clockContainer}>
-        {clockIsOn === false && totalTime === 0 && (
-          <Button size="massive" color="green" onClick={this.startClock}>
-            Clock In
-          </Button>
-        )}
-        {clockIsOn === true && (
-          <Button size="massive" color="red" onClick={this.stopClock}>
-            Clock Out
-          </Button>
-        )}
-        {clockIsOn === false && totalTime > 0 && (
-          <Button size="massive" color="green" onClick={this.startClock}>
-            Resume
-          </Button>
-        )}
-        {clockIsOn === false && totalTime > 0 && (
-          <Button size="massive" color="orange" onClick={this.resetClock}>
-            Reset
-          </Button>
-        )}
+        <div>
+          {clockIsOn === false && totalTime === 0 && (
+            <Button size="massive" color="green" onClick={this.startClock}>
+              Clock In
+            </Button>
+          )}
+          {clockIsOn === true && (
+            <Button size="massive" color="red" onClick={this.stopClock}>
+              Clock Out
+            </Button>
+          )}
+          {clockIsOn === false && totalTime > 0 && (
+            <Button size="massive" color="green" onClick={this.startClock}>
+              Resume
+            </Button>
+          )}
+          {clockIsOn === false && totalTime > 0 && (
+            <Button size="massive" color="orange" onClick={this.resetClock}>
+              Reset
+            </Button>
+          )}
+        </div>
         <div style={inlineStyle.clock}>
           <Statistic className="clock">
             <Statistic.Label>Time</Statistic.Label>

@@ -11,7 +11,6 @@ const LogtimeItem = ({ logtimeItems }) => {
               <Table.Cell>{logtimeItem.date}</Table.Cell>
               <Table.Cell>{logtimeItem.clockIn}</Table.Cell>
               <Table.Cell>{logtimeItem.clockOut}</Table.Cell>
-              <Table.Cell>{logtimeItem.totalBreakDuration}</Table.Cell>
               <Table.Cell>{logtimeItem.totalLogDuration}</Table.Cell>
               <Table.Cell className="text-center">
                 <Icon name="edit" className="gutter" title="Edit" link />

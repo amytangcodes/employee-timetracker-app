@@ -1,76 +1,68 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Button, Modal, Form } from "semantic-ui-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import axios from "axios";
 
-class LogtimeForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate: new Date(),
-    };
+const LogtimeForm = (props) => {
+  console.log({ props });
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.dateRef = React.createRef();
-    this.clockInRef = React.createRef();
-    this.clockOutRef = React.createRef();
-    this.totalBreakDurationRef = React.createRef();
-    this.totalLogDurationRef = React.createRef();
-  }
+  const [log, setLog] = useState(props.initialFormState);
 
-  handleChange = (date) => {
-    this.setState({ startDate: date });
-  };
-  handleSubmit = (evt) => {
-    evt.preventDefault();
-    axios
-      .post("/api/v1/logtime_items", {
-        logtime_item: {
-          date: this.dateRef.current.value,
-          clockIn: this.clockInRef.current.value,
-          clockOut: this.clockOutRef.current.value,
-          totalBreakDuration: this.totalBreakDurationRef.current.value,
-          totalLogDuration: this.totalLogDurationRef.current.value,
-        },
-      })
-      .then((res) => {
-        const logtimeItem = res.data;
-        this.props.createLogtimeItem(logtimeItem);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    evt.target.reset();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLog({ ...log, [name]: value });
   };
 
-  render() {
-    return (
-      <Form>
-        <Form.Group widths="equal">
-          <Form.Field>
-            <label>Date</label>
-            <DatePicker
-              selected={this.state.startDate}
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Form.Input fluid label="Clock In" placeholder="Clock In" />
-          <Form.Input fluid label="Clock Out" placeholder="Clock Out" />
-          <Form.Input
-            fluid
-            label="Total Break Time"
-            placeholder="Total Break Time"
+  return (
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (
+          !log.date ||
+          !log.clockIn ||
+          !log.ClockOut ||
+          !log.totalBreakDuration
+        )
+          return;
+        props.addLog(log);
+        setLog(props.initialFormState);
+      }}
+    >
+      <Form.Group widths="equal">
+        <Form.Field>
+          <label>Date</label>
+          <DatePicker
+            selected={log.date}
+            value={log.date}
+            onChange={handleInputChange}
           />
-        </Form.Group>
-      </Form>
-    );
-  }
-}
+        </Form.Field>
+        <Form.Input
+          fluid
+          label="Clock In"
+          placeholder="Clock In"
+          value={log.clockIn}
+          onChange={handleInputChange}
+        />
+        <Form.Input
+          fluid
+          label="Clock Out"
+          placeholder="Clock Out"
+          value={log.clockOut}
+          onChange={handleInputChange}
+        />
+        <Form.Input
+          fluid
+          label="Total Break Time"
+          placeholder="Total Break Time"
+          value={log.totalBreakDuration}
+          onChange={handleInputChange}
+        />
+      </Form.Group>
+    </Form>
+  );
+};
 
 export default LogtimeForm;
-
-LogtimeForm.propTypes = {
-  // createLogtimeItem: PropTypes.func.isRequired,
-};
