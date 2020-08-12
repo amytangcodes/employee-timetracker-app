@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome To Your Employee Time Tracker!</h1>
+    <p>Log in to access your dashboard</p>
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, type: "button", class: "btn btn-lg btn-info") %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path, type: "button", class: "btn btn-lg btn-info") %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Modal } from "semantic-ui-react";
+import { Button, Modal, Icon } from "semantic-ui-react";
 
 import LogtimeForm from "./LogtimeForm";
 
@@ -16,6 +16,9 @@ const inlineStyle = {
     position: "fixed",
     bottom: "0",
   },
+  icon: {
+    marginRight: "15px !important",
+  },
 };
 
 const LogtimeModal = () => {
@@ -27,7 +30,8 @@ const LogtimeModal = () => {
       onOpen={() => setOpen(true)}
       open={open}
       trigger={
-        <Button color="blue" fluid>
+        <Button icon color="blue" fluid>
+          <Icon name="plus" style={inlineStyle.icon} />
           Manually Log Your hours
         </Button>
       }
