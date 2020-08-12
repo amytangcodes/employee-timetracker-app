@@ -60,11 +60,16 @@ git clone git@github.com:amytangcodes/employee-timetracker-app.git
 Install Dependencies
 
 ```bash
-<TODO>
+npm install
+bundle install
 ```
 
-In the console, you can run:
+To build up the database:
+```bash
+rails db:create db:migrate db:seed
+```
 
+Run the server:
 ```bash
 rails s
 ```
