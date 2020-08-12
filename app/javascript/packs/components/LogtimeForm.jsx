@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, Modal, Form } from "semantic-ui-react";
 import DatePicker from "react-datepicker";
-import PropTypes from "prop-types";
 import "react-datepicker/dist/react-datepicker.css";
 
 import axios from "axios";
@@ -61,8 +60,8 @@ class LogtimeForm extends Component {
           <Form.Input fluid label="Clock Out" placeholder="Clock Out" />
           <Form.Input
             fluid
-            label="Total Break Duration"
-            placeholder="Total Break Duration"
+            label="Total Break Time"
+            placeholder="Total Break Time"
           />
         </Form.Group>
       </Form>
@@ -73,5 +72,5 @@ class LogtimeForm extends Component {
 export default LogtimeForm;
 
 LogtimeForm.propTypes = {
-  createLogtimeItem: PropTypes.func.isRequired,
+  // createLogtimeItem: PropTypes.func.isRequired,
 };

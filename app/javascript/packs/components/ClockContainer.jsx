@@ -3,11 +3,17 @@ import { Button, Statistic } from "semantic-ui-react";
 
 const inlineStyle = {
   clockContainer: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  clock: {
     marginTop: "30px",
     marginBottom: "30px",
   },
 };
-
 class ClockContainer extends Component {
   state = {
     clockIsOn: false,
@@ -48,7 +54,7 @@ class ClockContainer extends Component {
     let clock = `${hours} : ${minutes} : ${seconds}`;
 
     return (
-      <div>
+      <div style={inlineStyle.clockContainer}>
         {clockIsOn === false && totalTime === 0 && (
           <Button size="massive" color="green" onClick={this.startClock}>
             Clock In
@@ -69,8 +75,7 @@ class ClockContainer extends Component {
             Reset
           </Button>
         )}
-
-        <div style={inlineStyle.clockContainer}>
+        <div style={inlineStyle.clock}>
           <Statistic className="clock">
             <Statistic.Label>Time</Statistic.Label>
             <Statistic.Value>{clock}</Statistic.Value>
