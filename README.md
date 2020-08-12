@@ -1,6 +1,6 @@
 # Introduction
 
-This is a repository of an employee time tracker application using Ruby on Rails and ReactJS.
+This is a repository for an employee time tracker application using Ruby on Rails and ReactJS.
 
 ## Table of Contents
 
@@ -27,6 +27,8 @@ Additional considerations:
 ## Approach
 
 **How did you approach this challenge?**
+**What schema design did you choose and why?**
+
 Architected the layout for the project on paper.
 Started up a Trello board to loosely write out steps/ tickets.
 Figured out what information I required to log each work schedule
@@ -36,11 +38,9 @@ Figured out what information I required to log each work schedule
 - duration of breaks
 - duration of whole shift minus time spent on breaks
 
-**What schema design did you choose and why?**
-
 **If you were given another day to work on this, how would you spend it? What if you were given a month?**
 
-- Continue working on creating new data, hook up edit log data, and delete log
+- Continue working on creating new log, hook up edit log data, and delete log
 - Format clock and date
 - Add user profile section - User profile controller
 - Maybe go through [this](https://blog.heroku.com/a-rock-solid-modern-web-stack) to better understand deploying to heroku
@@ -65,11 +65,15 @@ bundle install
 ```
 
 To build up the database:
+
 ```bash
 rails db:create db:migrate db:seed
 ```
 
+Can rerun `rails db:seed` to generate more dummy data to test out delete function
+
 Run the server:
+
 ```bash
 rails s
 ```
@@ -80,7 +84,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Projects
 
 All project stylings we use Semantic-UI.
-
-<TODO>
-
-## Other Available Scripts

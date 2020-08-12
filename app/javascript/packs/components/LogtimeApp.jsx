@@ -20,7 +20,10 @@ const LogtimeApp = () => {
   return (
     <div>
       <UserProfile />
-      <LogtimeItems logtimeItems={logtimeItems} />
+      <LogtimeItems
+        logtimeItems={logtimeItems}
+        setLogtimeItems={setLogtimeItems}
+      />
       <LogtimeModal />
     </div>
   );
