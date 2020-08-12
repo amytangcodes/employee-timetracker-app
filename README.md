@@ -26,19 +26,25 @@ Additional considerations:
 
 ## Approach
 
-<TODO>
+**How did you approach this challenge?**
+Architected the layout for the project on paper.
+Started up a Trello board to loosely write out steps/ tickets.
+Figured out what information I required to log each work schedule
 
-How did you approach this challenge?
-What schema design did you choose and why?
+- start of the shift
+- end of shift
+- duration of breaks
+- duration of whole shift minus time spent on breaks
 
-## Backlog
+**What schema design did you choose and why?**
 
-If you were given another day to work on this, how would you spend it? What if you were given a month?
+**If you were given another day to work on this, how would you spend it? What if you were given a month?**
 
 - User profile section - User profile controller
 - Define user page permissions - different access between Admin, teacher, parents
 - Write tests
-- React refactor code (hooks)
+
+All proposed features, code tasks, and retro notes found here [Trello Notes](https://trello.com/c/5s8QGfAP)
 
 ## Installation
 
