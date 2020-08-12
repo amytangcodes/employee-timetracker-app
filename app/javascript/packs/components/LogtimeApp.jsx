@@ -7,6 +7,12 @@ import UserProfile from "./UserProfile";
 import LogtimeItems from "./LogtimeItems";
 import LogtimeModal from "./LogtimeModal";
 
+const inlineStyle = {
+  appWrapper: {
+    paddingBottom: "40px",
+  },
+};
+
 const LogtimeApp = () => {
   useEffect(() => {
     axios
@@ -18,7 +24,7 @@ const LogtimeApp = () => {
   const [logtimeItems, setLogtimeItems] = useState([]);
 
   return (
-    <div>
+    <div style={inlineStyle.appWrapper}>
       <UserProfile />
       <LogtimeItems
         logtimeItems={logtimeItems}

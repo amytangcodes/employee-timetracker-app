@@ -83,4 +83,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Projects
 
-All project stylings we use Semantic-UI.
+All project stylings done with Semantic-UI.
