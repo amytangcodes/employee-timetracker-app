@@ -1,21 +1,7 @@
 import React from "react";
 import { Table, Icon } from "semantic-ui-react";
 
-import axios from "axios";
-import setAxiosHeaders from "./AxiosHeaders";
-
-const LogtimeItem = ({ logtimeItems, setLogtimeItems }) => {
-  const deleteLog = (id) => {
-    setAxiosHeaders();
-    axios
-      .delete(`/api/v1/logtime_items/${id}`)
-      .then((res) => {
-        setLogtimeItems(
-          logtimeItems.filter((logtimeItem) => logtimeItem.id !== id)
-        );
-      })
-      .catch((err) => console.log(err));
-  };
+const LogtimeItem = ({ logtimeItems, deleteLogtimeItem }) => {
   return (
     <>
       {logtimeItems &&
@@ -37,7 +23,7 @@ const LogtimeItem = ({ logtimeItems, setLogtimeItems }) => {
                     e.preventDefault();
                     const confirmation = confirm("Are you sure?");
                     if (!confirmation) return;
-                    deleteLog(logtimeItem.id);
+                    deleteLogtimeItem(logtimeItem.id);
                   }}
                 />
               </Table.Cell>

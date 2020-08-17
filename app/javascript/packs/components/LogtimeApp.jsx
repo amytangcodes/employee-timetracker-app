@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-import axios from "axios";
-
+import useLogtimeItemState from "./useLogtimeItemState";
 import UserProfile from "./UserProfile";
 import LogtimeItems from "./LogtimeItems";
 import LogtimeModal from "./LogtimeModal";
@@ -14,14 +13,12 @@ const inlineStyle = {
 };
 
 const LogtimeApp = () => {
-  useEffect(() => {
-    axios
-      .get("/api/v1/logtime_items")
-      .then((res) => setLogtimeItems(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  const [logtimeItems, setLogtimeItems] = useState([]);
+  const {
+    logtimeItems,
+    setLogtimeItems,
+    deleteLogtimeItem,
+  } = useLogtimeItemState([]);
+  console.log({ logtimeItems });
 
   return (
     <div style={inlineStyle.appWrapper}>
@@ -29,6 +26,7 @@ const LogtimeApp = () => {
       <LogtimeItems
         logtimeItems={logtimeItems}
         setLogtimeItems={setLogtimeItems}
+        deleteLogtimeItem={deleteLogtimeItem}
       />
       <LogtimeModal />
     </div>

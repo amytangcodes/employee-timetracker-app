@@ -3,7 +3,7 @@ import { Icon, Menu, Table } from "semantic-ui-react";
 
 import LogtimeItem from "./LogtimeItem";
 
-const LogtimeItems = ({ logtimeItems }) => {
+const LogtimeItems = ({ logtimeItems, deleteLogtimeItem }) => {
   return (
     <Table celled>
       <Table.Header>
@@ -17,7 +17,10 @@ const LogtimeItems = ({ logtimeItems }) => {
       </Table.Header>
 
       <Table.Body>
-        <LogtimeItem logtimeItems={logtimeItems} />
+        <LogtimeItem
+          logtimeItems={logtimeItems}
+          deleteLogtimeItem={deleteLogtimeItem}
+        />
       </Table.Body>
 
       <Table.Footer>
