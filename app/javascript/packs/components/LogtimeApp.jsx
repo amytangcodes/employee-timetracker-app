@@ -15,20 +15,18 @@ const inlineStyle = {
 const LogtimeApp = () => {
   const {
     logtimeItems,
-    setLogtimeItems,
+    addLogtimeItem,
     deleteLogtimeItem,
   } = useLogtimeItemState([]);
-  console.log({ logtimeItems });
 
   return (
     <div style={inlineStyle.appWrapper}>
       <UserProfile />
-      <LogtimeItems
+      <LogtimeTable
         logtimeItems={logtimeItems}
-        setLogtimeItems={setLogtimeItems}
         deleteLogtimeItem={deleteLogtimeItem}
       />
-      <LogtimeModal />
+      <LogtimeModal addLogtimeItem={addLogtimeItem} />
     </div>
   );
 };

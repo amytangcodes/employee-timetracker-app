@@ -35,10 +35,10 @@ const LogtimeModal = () => {
     axios
       .post("/api/v1/logtime_items", {
         logtime_item: {
-          date: job.date,
-          clockIn: job.clockIn,
-          clockOut: job.clockOut,
-          totalBreakDuration: job.totalBreakDuration,
+          date: log.date,
+          clockIn: log.clockIn,
+          clockOut: log.clockOut,
+          totalBreakDuration: log.totalBreakDuration,
         },
       })
       .then((res) => createLogtimeItems(res.data))
