@@ -226,7 +226,7 @@ DEPENDENCIES
   devise (~> 4.7, >= 4.7.1)
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   pry
   pry-byebug
   pry-rails
