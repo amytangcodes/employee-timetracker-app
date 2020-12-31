@@ -24,29 +24,6 @@ Additional considerations:
 - A clock event may need to be edited or deleted
 - Are there any validations or UI constraints.
 
-## Approach
-
-**How did you approach this challenge?**
-**What schema design did you choose and why?**
-
-Architected the layout for the project on paper.
-Started up a Trello board to loosely write out steps/ tickets.
-Figured out what information I required to log each work schedule
-
-- start of the shift
-- end of shift
-- duration of breaks
-- duration of whole shift minus time spent on breaks
-
-**If you were given another day to work on this, how would you spend it? What if you were given a month?**
-
-- Continue working on creating new log, hook up edit log data, and delete log
-- Format clock and date
-- Add user profile section - User profile controller
-- Maybe go through [this](https://blog.heroku.com/a-rock-solid-modern-web-stack) to better understand deploying to heroku
-- Define user page permissions - different access between Admin, teacher, parents
-- Write tests
-
 All proposed features, code tasks, and retro notes found here [Trello Notes](https://trello.com/c/5s8QGfAP)
 
 ## Installation
