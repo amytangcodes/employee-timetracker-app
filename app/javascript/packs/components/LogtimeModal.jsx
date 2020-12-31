@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal, Icon } from "semantic-ui-react";
 
+import useModalOpenState from "./useModalOpenState";
 import LogtimeForm from "./LogtimeForm";
 
 const inlineStyle = {
@@ -21,8 +22,8 @@ const inlineStyle = {
   },
 };
 
-const LogtimeModal = () => {
-  const [open, setOpen] = React.useState(false);
+const LogtimeModal = ({ addLogtimeItem }) => {
+  const { openModal, setOpenModal } = useModalOpenState(false);
 
   const initialFormState = {
     date: "",
@@ -32,6 +33,7 @@ const LogtimeModal = () => {
   };
 
   const addLog = (log) => {
+    console.log({ log });
     axios
       .post("/api/v1/logtime_items", {
         logtime_item: {
@@ -49,9 +51,9 @@ const LogtimeModal = () => {
 
   return (
     <Modal
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
+      onClose={() => openModal(false)}
+      onOpen={() => openModal(true)}
+      open={openModal}
       trigger={
         <Button icon color="blue" fluid>
           <Icon name="plus" style={inlineStyle.icon} /> Manually Log Your hours
@@ -62,18 +64,21 @@ const LogtimeModal = () => {
       <Modal.Header>Fill Out Your Log Details</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <LogtimeForm addLog={addLog} initialFormState={initialFormState} />
+          <LogtimeForm
+            addLogtimeItem={addLogtimeItem}
+            initialFormState={initialFormState}
+          />
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions style={inlineStyle.actions}>
-        <Button color="black" onClick={() => setOpen(false)}>
+        <Button color="black" onClick={() => openModal(false)}>
           Cancel
         </Button>
         <Button
           content="Submit"
           labelPosition="right"
           icon="checkmark"
-          onClick={() => setOpen(false)}
+          onClick={() => openModal(false)}
           positive
         />
       </Modal.Actions>

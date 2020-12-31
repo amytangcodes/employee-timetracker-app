@@ -22,7 +22,7 @@ const LogtimeApp = () => {
   return (
     <div style={inlineStyle.appWrapper}>
       <UserProfile />
-      <LogtimeTable
+      <LogtimeItems
         logtimeItems={logtimeItems}
         deleteLogtimeItem={deleteLogtimeItem}
       />
